@@ -3,11 +3,7 @@ package JPCAP_CSDN;
 import jpcap.JpcapCaptor;
 import jpcap.NetworkInterface;
 import jpcap.PacketReceiver;
-import jpcap.packet.DatalinkPacket;
-import jpcap.packet.EthernetPacket;
 import jpcap.packet.Packet;
-
-import java.beans.EventHandler;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -18,21 +14,8 @@ class Receiver implements PacketReceiver {
     // 实现类中的处理接收到的 Packet 对象的方法,每个 Packet对象代表从指定网络接口上抓取到的数据包;
     // 抓到的包将调用这个 PacketReceiver对象中的 receivePacket(Packet packet)方法处理；
     public void receivePacket(Packet packet) {
-        // System.out.println(packet);// 直接将捕获的包输出,不做任何处理;
-        System.out.println("数据包的字符串 : " + packet.toString());// String toString: 返回描述此数据包的字符串;
-        System.out.println("以太帧报头 : " + packet.datalink);// DatalinkPacket datalink: 数据链路层报头/以太帧报头;
-
-        System.out.println("长度 : " + packet.caplen);
-        System.out.println("数据包长度 : " + packet.len);
-        System.out.println("时间戳秒 : " + packet.sec);
-        System.out.println("时间戳毫秒 : " + packet.usec);
-
-        EthernetPacket dlp = (EthernetPacket) packet.datalink;
-        System.out.println(dlp.getSourceAddress());// 源mac地址
-        System.out.println(dlp.getDestinationAddress());// 目的mac地址
-        System.out.println(dlp.frametype);// 帧类型
-        System.out.println(dlp.toString());// 描述以太帧的字符串
-        System.out.println("---------------------");
+        System.out.println(packet);// 直接将捕获的包输出,不做任何处
+        System.out.println("---------------------------------------");
     }
 }
 
