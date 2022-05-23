@@ -3,7 +3,7 @@ package Jpcap_Test;
 import jpcap.JpcapCaptor;
 import jpcap.packet.*;
 
-// 线程任务类,用来捕获数据并分析数据包;
+// 线程任务类,用来捕获数据包;
 class CaptureThread implements Runnable {
     private JpcapCaptor jpcap;
 
